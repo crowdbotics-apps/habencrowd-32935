@@ -10,10 +10,6 @@ class App(models.Model):
     description = models.CharField(
         max_length=500,
     )
-    planid = models.IntegerField(
-        null=True,
-        blank=True,
-    )
 
 
 class Plan(models.Model):
@@ -29,5 +25,12 @@ class Plan(models.Model):
 
 class Subscription(models.Model):
     "Generated Model"
-    planid = models.IntegerField()
     active = models.BooleanField()
+    plan = models.IntegerField(
+        null=True,
+        blank=True,
+    )
+    app = models.IntegerField(
+        null=True,
+        blank=True,
+    )

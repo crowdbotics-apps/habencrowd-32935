@@ -8,33 +8,57 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('home', '0001_load_initial_data'),
+        ("home", "0001_load_initial_data"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='App',
+            name="App",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=256)),
-                ('description', models.CharField(max_length=500)),
-                ('planid', models.IntegerField(blank=True, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=256)),
+                ("description", models.CharField(max_length=500)),
+                ("planid", models.IntegerField(blank=True, null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Plan',
+            name="Plan",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=256)),
-                ('price', models.IntegerField(blank=True, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=256)),
+                ("price", models.IntegerField(blank=True, null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Subscription',
+            name="Subscription",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('planid', models.IntegerField()),
-                ('active', models.BooleanField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("planid", models.IntegerField()),
+                ("active", models.BooleanField()),
             ],
         ),
     ]
